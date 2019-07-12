@@ -1,0 +1,26 @@
+
+.heroes {
+    &__hero {
+        width: 200px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 10px;
+        margin: 5px;
+        background: #ddd;
+    }
+    &__hero:hover {
+        background: #bbb;
+    }
+    &__hero--selected {
+        background: #bbb;
+    }
+    &__badge {
+        width: 20px;
+        text-align: center;
+        display: inline-block;
+        background: #444;
+        color: #fff;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+}
