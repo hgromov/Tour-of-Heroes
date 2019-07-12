@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Hero } from '../../models/hero';
-import { HEROES } from "../../mock-heroes";
+import { HeroService } from '../../hero.service';
 
 @Component({
   selector: "app-heroes",
@@ -8,15 +8,22 @@ import { HEROES } from "../../mock-heroes";
   styleUrls: ["./heroes.component.scss"]
 })
 export class HeroesComponent implements OnInit {
-  heroes = HEROES;
-  selectedHero: Hero;
+  heroes: Hero[];
   
-  constructor() {}
+  constructor(
+    private heroService: HeroService
+  ) {}
 
   ngOnInit() {
+    this.getHeroes(); 
   }
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
+  getHeroes(): void {
+    this.heroService.getHeroes()  // call async method from service
+        .subscribe(              //  subscribe on changes
+          heroes =>             //   get heroes data
+          this.heroes = heroes //    assign data in the field of this class 
+        )
   }
+
 }
