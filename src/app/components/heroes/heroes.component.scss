@@ -7,15 +7,18 @@
         border-radius: 10px;
         margin: 5px;
         background: #ddd;
+        transition: transform;
+        transition-duration: .2s;
     }
     &__hero:hover {
         background: #bbb;
+        transform: translateX(3px)
     }
     &__hero--selected {
         background: #bbb;
     }
     &__badge {
-        width: 20px;
+        width: 25px;
         text-align: center;
         display: inline-block;
         background: #444;
